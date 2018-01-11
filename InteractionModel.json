@@ -1,0 +1,495 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "BatteryName",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Starter",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "House",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "0",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "100",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "BatteryValue",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "voltage",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "current",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "charge",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "SignalKKeyName",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Wind Speed",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Cabin Temperature",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Water Temperature",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "depth below keel",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "depth below surface",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "depth below transducer",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "speed over ground",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "outside temperature",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "TankType",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Fuel",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Black Water",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fresh Water",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "Units",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "feet",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "meters per second",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "fahrenheit",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "celsius",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "knots",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "miles per hour",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "kilometers per hour",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "UnitsType",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "depth",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "temperature",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "speed",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "wind speed",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "GetBattery",
+        "samples": [
+          "What is the {BatteryName} battery {BatteryValue}",
+          "What is the battery {BatteryValue}",
+          "For the battery {BatteryValue}",
+          "For the {BatteryName} battery {BatteryValue}"
+        ],
+        "slots": [
+          {
+            "name": "BatteryName",
+            "type": "BatteryName"
+          },
+          {
+            "name": "BatteryValue",
+            "type": "BatteryValue",
+            "samples": [
+              "Tell me the {BatteryValue}"
+            ]
+          },
+          {
+            "name": "mmsi",
+            "type": "AMAZON.NUMBER"
+          }
+        ]
+      },
+      {
+        "name": "GetData",
+        "samples": [
+          "What is the {SignalKField}",
+          "Tell me the {SignalKField}",
+          "For the {SignalKField}"
+        ],
+        "slots": [
+          {
+            "name": "SignalKField",
+            "type": "SignalKKeyName",
+            "samples": [
+              "Tell me the {SignalKField}"
+            ]
+          },
+          {
+            "name": "mmsi",
+            "type": "AMAZON.NUMBER"
+          }
+        ]
+      },
+      {
+        "name": "GetLevel",
+        "samples": [
+          "What is the {TankType} level",
+          "For the {TankType} level"
+        ],
+        "slots": [
+          {
+            "name": "TankType",
+            "type": "TankType",
+            "samples": [
+              "The {TankType} tank"
+            ]
+          },
+          {
+            "name": "mmsi",
+            "type": "AMAZON.NUMBER"
+          }
+        ]
+      },
+      {
+        "name": "SetMMSI",
+        "samples": [
+          "My m m s i is {mmsi}",
+          "My mmsi is {mmsi}",
+          "My boat is {mmsi}"
+        ],
+        "slots": [
+          {
+            "name": "mmsi",
+            "type": "AMAZON.NUMBER",
+            "samples": [
+              "My m m s i is one two five six seven"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SetUnits",
+        "samples": [
+          "Use {units} for {unitsType}"
+        ],
+        "slots": [
+          {
+            "name": "units",
+            "type": "Units"
+          },
+          {
+            "name": "unitsType",
+            "type": "UnitsType"
+          }
+        ]
+      },
+      {
+        "name": "WhatIsMyMMSI",
+        "samples": [
+          "What is my mmsi"
+        ],
+        "slots": []
+      }
+    ],
+    "invocationName": "signal k"
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-GetBattery.IntentSlot-BatteryValue",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What information would you like to know about your battery?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetData.IntentSlot-SignalKField",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What would you like to know about your boat"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetLevel.IntentSlot-TankType",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Which tank would you like to know about?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SetMMSI.IntentSlot-mmsi",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What is your m m s i"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "GetBattery",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "BatteryName",
+            "type": "BatteryName",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "BatteryValue",
+            "type": "BatteryValue",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetBattery.IntentSlot-BatteryValue"
+            }
+          },
+          {
+            "name": "mmsi",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          }
+        ]
+      },
+      {
+        "name": "GetData",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "SignalKField",
+            "type": "SignalKKeyName",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetData.IntentSlot-SignalKField"
+            }
+          },
+          {
+            "name": "mmsi",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          }
+        ]
+      },
+      {
+        "name": "GetLevel",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "TankType",
+            "type": "TankType",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetLevel.IntentSlot-TankType"
+            }
+          },
+          {
+            "name": "mmsi",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          }
+        ]
+      },
+      {
+        "name": "SetMMSI",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "mmsi",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-SetMMSI.IntentSlot-mmsi"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
