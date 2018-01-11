@@ -1,12 +1,18 @@
-/* eslint-disable  func-names */
-/* eslint quote-props: ["error", "consistent"]*/
-/**
- * This sample demonstrates a simple skill built with the Amazon Alexa Skills
- * nodejs skill development kit.
- * This sample supports multiple lauguages. (en-US, en-GB, de-DE).
- * The Intent Schema, Custom Slots and Sample Utterances for this skill, as well
- * as testing instructions are located at https://github.com/alexa/skill-sample-nodejs-fact
- **/
+/*
+ * Copyright 2017 Scott Bender (scott@scottbender.net)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 'use strict';
 
